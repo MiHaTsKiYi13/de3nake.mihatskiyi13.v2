@@ -822,3 +822,106 @@ body::before {
     animation: none; /* Останавливаем анимацию, если она была */
 }
 
+
+.bn30 {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+  }
+  
+  .bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  }
+  
+  .bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+  }
+  
+  .bn30:hover {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+  }
+  
+  .bn30:hover .text {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  }
+
+  .bn48 {
+    background: linear-gradient(90deg, #1e39a5, #c50e07);
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 300% 300%;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* Стили для иконки Telegram */
+.telegram-icon {
+    width: 20px;   /* Размер иконки */
+    height: 20px;  /* Размер иконки */
+    margin-right: 10px; /* Отступ от текста */
+    filter: invert(1); /* Иконка всегда будет белой */
+}
+
+/* Стили для контейнера ссылок */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;  /* Уменьшен отступ между ссылками */
+    padding: 5px;  /* Уменьшен отступ снизу */
+}
+
+/* Стили для ссылок */
+.links-container a {
+    display: flex;
+    align-items: center;
+    color: #168ff3ce;  /* Цвет текста */
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    transition: color 0.6s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Стили для иконок */
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;  /* Уменьшен отступ от текста */
+    filter: invert(1);   /* Белая иконка по умолчанию */
+    transition: transform 0.4s ease-in-out; /* Плавная анимация для движения */
+}
+
+/* Плавные анимации для ссылок */
+.links-container a:hover {
+    color: #ffffff;  /* Цвет текста при наведении */
+    transform: scale(1.1);  /* Немного увеличиваем ссылку при наведении */
+}
+
+/* Плавная анимация для иконок */
+.links-container a:hover .social-icon {
+    transform: translateX(5px);  /* Иконка немного двигается вправо при наведении */
+}
+

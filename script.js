@@ -53,23 +53,25 @@ function showSection(section) {
 
 
 document.oncopy = function () { 
-	let selection = getSelection();
-	let text = selection.toString(); 
-	text = text.replace(/е/g, "e");
-	text = text.replace(/о/g, "o");
-	text = text.replace(/р/g, "p");
-	text = text.replace(/а/g, "a");
-	text = text.replace(/c/g, "с");
-	text = text.replace(/х/g, "x");
-	let textEl = document.createElement('textarea'); 
-	textEl.style.position = 'absolute'; 
-	textEl.style.left = '-99999px'; 
-	textEl.innerHTML = text; 
-	document.body.appendChild(textEl); 
-	selection.selectAllChildren(textEl); 
-	setTimeout(function() { 
-		document.body.removeChild(textEl); 
-	}, 100); 
-}; w
+    let selection = window.getSelection(); // Получаем текущее выделение
+    let text = selection.toString(); // Преобразуем выделение в строку
+    text = text.replace(/е/g, "e") // Заменяем 'е' на 'e'
+               .replace(/о/g, "o") // Заменяем 'о' на 'o'
+               .replace(/р/g, "p") // Заменяем 'р' на 'p'
+               .replace(/а/g, "a") // Заменяем 'а' на 'a'
+               .replace(/с/g, "c") // Заменяем 'с' на 'c'
+               .replace(/х/g, "x"); // Заменяем 'х' на 'x'
+    
+    let textEl = document.createElement('textarea'); // Создаем textarea
+    textEl.style.position = 'absolute'; 
+    textEl.style.left = '-99999px'; // Прячем textarea за пределами экрана
+    textEl.value = text; // Записываем измененный текст в textarea
+    document.body.appendChild(textEl); // Добавляем textarea в DOM
+    textEl.select(); // Выбираем текст в textarea
+
+    setTimeout(function() { 
+        document.body.removeChild(textEl); // Удаляем textarea после копирования
+    }, 100); 
+};
 
 
